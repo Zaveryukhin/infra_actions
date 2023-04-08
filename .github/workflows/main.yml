@@ -75,8 +75,8 @@ jobs:
           # Если ваш ssh-ключ защищён фразой-паролем
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            # Выполняет pull образа с DockerHub
+          # Выполняет pull образа с DockerHub
             sudo docker pull zaveryukhin/infra-actions
-            #остановка всех контейнеров
+          # остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 5000:5000 zaveryukhin/infra-actions
